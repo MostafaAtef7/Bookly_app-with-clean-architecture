@@ -3,13 +3,20 @@ import 'package:bookly/features/home/domain/entities/book_entity.dart';
 import 'package:bookly/features/home/domain/repos/home_repo.dart';
 import 'package:dartz/dartz.dart';
 
-class FetchNewestBooksUseCase {
+class FetchNewestBooksUseCase extends UseCase<List<BookEntity>>{
   final HomeRepo homeRepo;
 
   FetchNewestBooksUseCase(this.homeRepo);
   // use case could be used or not in this app we implement it only but we won't use it
-  Future<Either<Failures, List<BookEntity>>> fetchNewestBooks() {
+  
+  @override
+  Future<Either<Failures, List<BookEntity>>> call() async{
     // here we could check premission for example
-    return homeRepo.fetchNewestBooks();
+    return await homeRepo.fetchNewestBooks();
   }
+}
+
+// this class resposible to handle team work it make all team override this method with the same name to all team
+abstract class UseCase<Type> {
+  Future<Either<Failures, Type>> call();
 }
