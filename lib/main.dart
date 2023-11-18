@@ -42,7 +42,7 @@ class Bookly extends StatelessWidget {
             ),
           ),
         ],
-        /*GetMaterialAp => used when i use Getx*/
+        /*GetMaterialApp => used when i use Getx*/
         // MaterialApp.router => used with go_router package that manage all navigation of the app
         child: MaterialApp.router(
           routerConfig: AppRouter.router,
