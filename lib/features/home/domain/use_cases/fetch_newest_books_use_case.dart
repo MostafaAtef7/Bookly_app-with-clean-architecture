@@ -7,7 +7,7 @@ class FetchNewestBooksUseCase extends UseCaseMethods<List<BookEntity>>{
   final HomeRepo homeRepo;
 
   FetchNewestBooksUseCase(this.homeRepo);
-  // use case could be used or not in this app we implement it only but we won't use it
+  // use case could be used or not. In this app we implement it only but we won't use it.
   
   @override
   Future<Either<Failures, List<BookEntity>>> call() async{
@@ -16,7 +16,7 @@ class FetchNewestBooksUseCase extends UseCaseMethods<List<BookEntity>>{
   }
 }
 
-// this class resposible to handle team work it make all team override this method with the same name to all team
+// this class responsible to handle team work it make all team override this method with the same name to all team
 abstract class UseCaseMethods<Type> {
   Future<Either<Failures, Type>> call();
 }
